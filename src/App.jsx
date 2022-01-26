@@ -1,4 +1,5 @@
-import {scaleLinear, scaleBand, extent, line, symbol, csv } from "d3";
+import {scaleLinear, scaleBand, extent, line, symbol, csv, axisBottom } from "d3";
+import { AxisLeft, AxisBottom } from "@visx/axis";
 import { useState } from 'react';
 import suicideRate from './suicide-rate.json';
 import mentalFacilities from './mental-facilities.json';
@@ -131,7 +132,8 @@ function App() {
       return <rect transform={'rotate(-30)'} x={30+i*20} y={200} width={10} height={10} fill={`rgb(${0},${255},${0})`}/>
     })}
     */}
-    
+    <AxisBottom top= {480} left={250} scale={circleScale} strokeWidth="2" numTicks={5}/>
+    <AxisBottom top= {480} left={0} scale={circleScale} strokeWidth="2" numTicks={5} tickTransform={`rorate(90) ${circleScale} 0`}/>
     </svg>
     <div style={{width: '600px', textAlign: 'center'}}>
   <h3>Write-up about my data visualization</h3>
@@ -149,6 +151,7 @@ It is very clear to see the difference of length of grey line and blue line whic
       the increase of population of adults are incredible big and US might face aging population in 20-40years.
     </p>
     <p>Even though I used provided dataset in this assignment, I have started doing a lot of research on mental health dataset. So for the remainder of this quarter, I will focus on creating data visualization for psychological related and mental health dataset. </p>
+    <p>Link to my github repo: https://github.com/SwordArtOnlineX/INFO474-Assignment1</p>
     </div>
   </div>
 
